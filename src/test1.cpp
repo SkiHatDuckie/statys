@@ -43,10 +43,19 @@ void print_system_memory() {
     );
 }
 
-// WARNING! RUNNING THIS AS EXECUTABLE CAN STALL YOUR COMPUTER. TEST WITH CAUTION!
 int main() {
+    MEMORYSTATUSEX statex;
+    statex.dwLength = sizeof(statex);
+
     while(true) {
         int *a = new int;
+
+        // Check system memory usage to see if it's safe to continue.
+        GlobalMemoryStatusEx(&statex);
+        if (statex.dwMemoryLoad > 80) {
+            std::cout << "System memory usage has exceeded 80%. Breaking from loop.\n";
+            break;
+        }
     }
 
     return 0;
