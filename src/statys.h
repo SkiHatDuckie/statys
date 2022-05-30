@@ -1,11 +1,16 @@
-#ifndef STATYS_H  // include guard
+#ifndef STATYS_H
 #define STATYS_H
 
+#include <windows.h>
+
 namespace statys {
-    class sys_mem {
+    class SysMemory {
         public:
-            int get_usage_as_percent();
+            int getUsageAsPercent();
+        
+        private:
+            MEMORYSTATUSEX _statex;
     };
 }
 
-#endif
+#endif  /* STATYS_H */

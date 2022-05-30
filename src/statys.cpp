@@ -3,9 +3,8 @@
 
 using namespace statys;
 
-int sys_mem::get_usage_as_percent() {
-    MEMORYSTATUSEX statex;
-    statex.dwLength = sizeof(statex);
-    GlobalMemoryStatusEx(&statex);
-    return statex.dwMemoryLoad;
+int SysMemory::getUsageAsPercent() {
+    _statex.dwLength = sizeof(_statex);
+    GlobalMemoryStatusEx(&_statex);
+    return _statex.dwMemoryLoad;
 }
