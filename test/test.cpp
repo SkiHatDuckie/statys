@@ -1,5 +1,5 @@
 #include <iostream>
-#include "statys.h"
+#include "..\src\statys.h"
 
 int main() {
     statys::sys_mem sys_memory;
