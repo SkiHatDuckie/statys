@@ -8,22 +8,16 @@ DWORDLONG toKilobytes(DWORDLONG bytes) {
 }
 
 int SysMemory::usageAsPercent() {
-    MEMORYSTATUSEX statex;
-    statex.dwLength = sizeof(statex);
-    GlobalMemoryStatusEx(&statex);
-    return statex.dwMemoryLoad;
+    GlobalMemoryStatusEx(&_statex);
+    return _statex.dwMemoryLoad;
 }
 
 DWORDLONG SysMemory::availablePhysicalMemory() {
-    MEMORYSTATUSEX statex;
-    statex.dwLength = sizeof(statex);
-    GlobalMemoryStatusEx(&statex);
-    return toKilobytes(statex.ullAvailPhys);
+    GlobalMemoryStatusEx(&_statex);
+    return toKilobytes(_statex.ullAvailPhys);
 }
 
 DWORDLONG SysMemory::totalPhysicalMemory() {
-    MEMORYSTATUSEX _statex;
-    _statex.dwLength = sizeof(_statex);
     GlobalMemoryStatusEx(&_statex);
     return toKilobytes(_statex.ullTotalPhys);
 }

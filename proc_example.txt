@@ -1,53 +1,20 @@
-Process ID: 4516
-        PageFaultCount: 0x00006B60             | 27488
-        PeakWorkingSetSize: 0x057DC000         | 92127232 bits, 89968 MB
-        WorkingSetSize: 0x054B1000             | 88805376 bits, 86724 MB
-        QuotaPeakPagedPoolUsage: 0x00073FE8    | 475112
-        QuotaPagedPoolUsage: 0x00073EB8        | 474808
-        QuotaPeakNonPagedPoolUsage: 0x00004208 | 16904
-        QuotaNonPagedPoolUsage: 0x00003C60     | 15456
-        PagefileUsage: 0x01750000              | 24444928
-        PeakPagefileUsage: 0x01AE4000          | 28196864
+benchmarkStatysStatex(); // no private variables
+10082.6ns/iter.
+13233.4ns/iter.
+7726.24ns/iter.
+8388.04ns/iter.
+9351.23ns/iter.
 
-Process ID: 16420
-        PageFaultCount: 0x000006E8             | 1768
-        PeakWorkingSetSize: 0x00589000         | 5804032 bits, 5668 MB
-        WorkingSetSize: 0x00542000             | 5513216 bits, 5384 MB
-        QuotaPeakPagedPoolUsage: 0x0000B8C8    | 47304
-        QuotaPagedPoolUsage: 0x0000B8C8        | 47304
-        QuotaPeakNonPagedPoolUsage: 0x00001B00 | 6912
-        QuotaNonPagedPoolUsage: 0x000019F0     | 6640
-        PagefileUsage: 0x0027F000              | 2617344
-        PeakPagefileUsage: 0x0064D000          | 6606848
+benchmarkStatysStatex(); // statex private variable
+15148.3ns/iter.
+8026.15ns/iter.
+10329.7ns/iter.
+9167.06ns/iter.
+8941.53ns/iter.
 
-// main.exe
-Process ID: 9060
-        PageFaultCount: 0x00000523    
-        PeakWorkingSetSize: 0x004B5000
-        WorkingSetSize: 0x003CC000
-        QuotaPeakPagedPoolUsage: 0x000093D0
-        QuotaPagedPoolUsage: 0x00007410
-        QuotaPeakNonPagedPoolUsage: 0x00001C60
-        QuotaNonPagedPoolUsage: 0x00001A50
-        PagefileUsage: 0x0010B000
-        PeakPagefileUsage: 0x00219000
-
-// main.exe example 2
-Process ID: 18424
-        PageFaultCount: 0x00000536
-        PeakWorkingSetSize: 0x004C6000
-        WorkingSetSize: 0x003DD000
-        QuotaPeakPagedPoolUsage: 0x000093F8
-        QuotaPagedPoolUsage: 0x00007430
-        QuotaPeakNonPagedPoolUsage: 0x00001B50
-        QuotaNonPagedPoolUsage: 0x00001940
-        PagefileUsage: 0x00105000
-        PeakPagefileUsage: 0x0021C000
-There is       72 percent of memory in use.
-There are 8193548 total KB of physical memory.
-There are 2259516 free  KB of physical memory.
-There are 10552844 total KB of paging file.
-There are 2737864 free  KB of paging file.
-There are 137438953344 total KB of virtual memory.
-There are 137434708048 free  KB of virtual memory.
-There are       0 free  KB of extended memory.
+benchmarkStatysStatex(); // statex.dwLength set in constructor
+8228.20ns/iter.
+8988.13ns/iter.
+9424.15ns/iter.
+9114.35ns/iter.
+13761.0ns/iter.
