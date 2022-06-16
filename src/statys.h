@@ -1,5 +1,4 @@
-#ifndef STATYS_H
-#define STATYS_H
+#pragma once
 
 #include <windows.h>
 #include <psapi.h>
@@ -35,5 +34,3 @@ namespace statys {
             PROCESS_MEMORY_COUNTERS _pmc;
     };
 }
-
-#endif  /* STATYS_H */
